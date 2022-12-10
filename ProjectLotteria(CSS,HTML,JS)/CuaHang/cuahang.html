@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store</title>
+    <link rel="stylesheet" href="../CuaHang/cuahang.css">
+    <link rel="stylesheet" href="../bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="header_background"></div>
+        <nav class="container loteria_nav">
+            <div class="logo">
+                <a href="../home.html"><img src="../images/lotteria_logo.svg" alt=""></a>
+            </div>
+            <ul class="top-nav">
+                <li class="nav-item"> <a href="../KhuyenMai/khuyenmai.html">Khuyến mãi</a>
+                    <div class="line"></div>
+                </li>
+                <li class="nav-item"><a href="">Đặt hàng</a></li>
+                <li class="nav-item"><a href="">Sinh nhật</a></li>
+                <li class="nav-item"><a href="../CuaHang/cuahang.html">Cửa hàng</a></li>
+            </ul>
+            <div class="right-content">
+                <div class="block-language-dowload">
+                    <div class="language-flag">
+                        <img src="../images/VietNam_Flag.png" alt="" class="icon_vietnam_dowload">
+                        <select name="" id="language">
+                            <option value="VietNam">Tiếng Việt</option>
+                            <option value="English">Tiếng Anh</option>
+                        </select>
+                    </div>
+                    <!-- <div class="block-dowload">
+                        <img src="../images/lotteria_logo.svg" alt="" class="icon_vietnam_dowload">
+                        <a href="#" class="dowload_app">Dowload App</a>
+                    </div> -->
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="dropdown">
+                            <img src="../images/lotteria_logo.svg" alt="logo-small-lotteria" width="15">
+                            Download
+                            App
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><img src="../images/icon_googleplay.png"
+                                        alt="googleplay-lotteria" width="85"></a>
+                            </li>
+                            <li><a class="dropdown-item" href="#"><img src="../images/icon_appstore.png"
+                                        alt="appstore-lotteria" width="85"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="withoutUser" class="block-info">
+                    <ul class="account-menu">
+                        <li class="menu_item">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_pos_2.svg" alt=""></span>
+                            </a>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_myaccount.svg" alt=""></span>
+                            </a>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_notification.svg" alt=""></span>
+                            </a>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_cart.svg" alt=""></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="withUser" class="block-info-logout">
+                    <ul class="account-menu">
+                        <li class="menu_item_login_pos">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_pos_2.svg" alt=""></span>
+                            </a>
+                        </li>
+                        <li class="menu_item_login_myaccount">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_myaccount.svg" alt=""></span>
+                            </a>
+                            <div class="block_infomation none">
+                                <ul class="infomation_list">
+                                    <li>
+
+                                        <a href="#" class="account_infomation">
+                                            <img src="../images/AccountList/icon-account-2.svg" alt=""
+                                                class="infomation_list_icon">
+                                            Thông tin tài khoản
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a href="#" class="shipping_address">
+                                            <img src="../images/AccountList/icon-pos.svg" alt=""
+                                                class="infomation_list_icon">
+                                            Địa chỉ giao hàng
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a href="#" class="order_history">
+                                            <img src="../images/AccountList/icon-history.svg" alt=""
+                                                class="infomation_list_icon">
+                                            Lịch sử đơn hàng
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a href="#" class="my_menu">
+                                            <img src="../images/AccountList/icon-save-2.svg" alt=""
+                                                class="infomation_list_icon">
+                                            Thực đơn của tôi
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a href="#" class="account_help">
+                                            <img src="../images/AccountList/icon-help.svg" alt=""
+                                                class="infomation_list_icon">
+                                            Hỗ trợ
+                                        </a>
+                                    </li>
+                                    <li onclick="logout()">
+
+                                        <a href="#" class="account_logout">
+                                            <img src="../images/AccountList/icon-logout.svg" alt=""
+                                                class="infomation_list_icon">
+                                            Đăng xuất
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu_item_login_notification">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_notification.svg" alt="" width="15"></span>
+                            </a>
+                        </li>
+                        <li class="menu_item_login_cart">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_cart.svg" alt=""></span>
+                            </a>
+                            <!-- Cart after Login -->
+                            <div class="cart_content none">
+                                <div class="cart_list">
+                                    <ul>
+                                        <!-- <li class="cart_item">
+                                           <button class="btn_delete_cart_item">
+                                            
+                                           </button>
+                                           <div class="field_img_cart">
+                                            <a href="">
+                                              <img src="./image/pack-534x374px_coupleset1 (1).png" alt="">
+                                            </a>
+                                           </div>
+                                           <div class="field_info">
+                                                 <p class="field_name">Combo 119.000 đ</p>
+                                                 <div class="field_price">
+                                                  <span class="current_price">119000</span>
+                                                  <span>đ x</span>
+                                                  <span class="quantity">1</span>
+                                                 </div>
+                                           </div>
+                                           
+                                      </li>
+                                      <li class="cart_item">
+                                        <button class="btn_delete_cart_item">
+                                         
+                                        </button>
+                                        <div class="field_img_cart">
+                                         <a href="">
+                                           <img src="./image/pack-534x374px_coupleset1 (1).png" alt="">
+                                         </a>
+                                        </div>
+                                        <div class="field_info">
+                                              <p class="field_name">Combo 149.000 đ</p>
+                                              <div class="field_price">
+                                               <span class="current_price">149000</span>
+                                               <span>đ x</span>
+                                               <span class="quantity">2</span>
+                                              </div>
+                                        </div>
+                                        
+                                   </li>-->
+                                    </ul>
+                                </div>
+                                <div class="total">
+                                    <p>
+                                        Tổng cộng
+                                    </p>
+                                    <div class="total_number">
+                                        <span class="total_money">0.0đ</span>
+
+                                    </div>
+                                </div>
+                                <button class="pay" onclick="submitPayment()">THANH TOÁN</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container store_lotte">
+        <div class="store_lotte_logo">
+            <img src="../images/lotteria_logo.svg" alt="">
+        </div>
+        <div class="nav_bar_store">
+            <div class="find_store ">
+                <a href="">TÌM CỬA HÀNG</a>
+            </div>
+            <div class="trademark_story">
+                <a href="GioiThieu.html">CÂU CHUYỆN THƯƠNG HIỆU</a>
+            </div>
+            <div class="franchise">
+                <a href="NhuongQuyen.html">NHƯỢNG QUYỀN</a>
+            </div>
+        </div>
+        <div class="list_district">
+            <div class="row g-4 ">
+                <div class="col-lg-3 col_district">
+                    <div class="inside_col_district">
+                        <button class="btn_district" id="Q1"> Quận 1 </button>
+                        <button class="btn_district" id="Q2"> Quận 2 </button>
+                        <button class="btn_district" id="Q3"> Quận 3 </button>
+                        <button class="btn_district" id="Q4"> Quận 4 </button>
+                        <button class="btn_district" id="Q5"> Quận 5 </button>
+                        <button class="btn_district" id="Q6"> Quận 6 </button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col_district">
+                    <div class="inside_col_district">
+                        <button class="btn_district" id="Q7"> Quận 7 </button>
+                        <button class="btn_district" id="Q8"> Quận 8 </button>
+                        <button class="btn_district" id="Q9"> Quận 9 </button>
+                        <button class="btn_district" id="Q10"> Quận 10 </button>
+                        <button class="btn_district" id="Q11"> Quận 11 </button>
+                        <button class="btn_district" id="Q12"> Quận 12 </button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col_district">
+                    <div class="inside_col_district">
+                        <button class="btn_district" id="BTan"> Quận Bình Tân </button>
+                        <button class="btn_district" id="PNhuan"> Quận Phú Nhuận </button>
+                        <button class="btn_district" id="TPhu"> Quận Tân Phú </button>
+                        <button class="btn_district" id="TBinh"> Quận Tân Bình </button>
+                        <button class="btn_district" id="BThanh"> Quận Bình Thạnh </button>
+                        <button class="btn_district" id="GVap"> Quận Gò Vấp </button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col_district">
+                    <div class="inside_col_district">
+                        <button class="btn_district" id="TDuc"> Thành phố Thủ Đức </button>
+                        <button class="btn_district" id="CChi"> Huyện Củ Chi </button>
+                        <button class="btn_district" id="HMon"> Huyện Hóc Môn </button>
+                        <button class="btn_district" id="BChanh"> Huyện Bình Chánh </button>
+                        <button class="btn_district" id="NBe"> Huyện Nhà Bè </button>
+                        <button class="btn_district" id="CGio"> Huyện Cần Giờ </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="location_lotteria">
+
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15677.788006386825!2d106.68970636875305!3d10.777035656467234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1slotteria%20qu%E1%BA%ADn%201!5e0!3m2!1svi!2s!4v1670581506968!5m2!1svi!2s"
+                width="1120px" ; height="450px" ; style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="subcribe-form">
+                <p class="logo-ft">
+                    <img src="../images/lotteria_logo.svg" alt="Lotterria" width="85">
+                </p>
+                <h3>ĐĂNG KÝ NHẬN THÔNG TIN KHUYẾN MÃI</h3>
+                <form class="form-content">
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Nhập email của bạn" class="form-control">
+                        <span class="btn-submit">
+                            <button class="btn" type="submit" title="Gửi Ngay">Gửi ngay →</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="right-content">
+                <div class="f-menu">
+                    <div class="item">
+                        <h3>THÔNG TIN</h3>
+                        <ul>
+                            <li>
+                                <a title="Tin Tức" href="#">Tin Tức</a>
+                            </li>
+                            <li>
+                                <a title="Khuyến Mãi" href="#">Khuyến Mãi</a>
+                            </li>
+                            <li>
+                                <a title="Tuyển Dụng" href="#">Tuyển Dụng</a>
+                            </li>
+                            <li>
+                                <a title="Nhượng Quyền" href="#">Nhượng Quyền</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <h3>HỖ TRỢ</h3>
+                        <ul>
+                            <li>
+                                <a title="Điều khoản sử dụng" href="#">Điều khoản sử dụng</a>
+                            </li>
+                            <li>
+                                <a title="Chính sách bảo mật" href="#">Chính sách bảo mật</a>
+                            </li>
+                            <li>
+                                <a title="Chính sách giao hàng" href="#">Chính sách giao hàng</a>
+                            </li>
+                            <li>
+                                <a title="Chăm sóc khách hàng" href="#">Chăm sóc khách hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <h3>THEO DÕI</h3>
+                        <ul>
+                            <li class="icon icon-fb">
+                                <a title="Facebook" target="_blank"
+                                    href="https://www.facebook.com/ilovelotteria?fref=ts">Facebook</a>
+                            </li>
+                            <li class="icon icon-instagram">
+                                <a title="Instagram" href="https://www.instagram.com/lotteria_vn/"
+                                    target="_blank">Instagram</a>
+                            </li>
+                            <li class="icon icon-zalo">
+                                <a title="Zalo" href="https://zalo.me/532153540884181118" target="_blank">Zalo</a>
+                            </li>
+                        </ul>
+                        <p class="bct-logo">
+                            <a href="http://online.gov.vn/(X(1)S(5zi3rcdhmmdgtemydhaw2z5k))/Home/WebDetails/36393?AspxAutoDetectCookieSupport=1"
+                                target="_blank">
+                                <img src="../images/icon_insurance.png" alt="icon-insurance">
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <strong>© 2022 Lotteria All Rights Reserved</strong>
+            &nbsp;&nbsp;Site by LDCC
+        </div>
+    </footer>
+    <div class="icon-staff-fixed">
+        <a href="https://m.me/ilovelotteria" target="_blank">&nbsp;</a>
+        <object data="../images/icon-staff.svg" type="image/svg+xml"></object>
+    </div>
+
+    <script src="../Javascript/store.js"></script>
+</body>
+
+</html>

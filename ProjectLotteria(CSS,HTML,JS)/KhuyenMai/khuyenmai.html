@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotteria Viet Nam</title>
+    <link rel="icon" href="../images/lotteria_logo.svg">
+    <link rel="stylesheet" href="./khuyenmai.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="../Javascript/khuyenmai.js"></script>
+    <script async src="../Javascript/initial.js"></script>
+    <script defer src="../Javascript/authenticate.js"></script>
+    <script async src="https://smtpjs.com/v3/smtp.js"></script>
+    <script defer src="../Javascript/invoice.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="header_background"></div>
+        <nav class="container loteria_nav">
+            <div class="logo">
+                <a href="../home.html"><img src="../images/lotteria_logo.svg" alt=""></a>
+            </div>
+            <ul class="top-nav">
+                <li class="nav-item"> <a href="../KhuyenMai/khuyenmai.html">Khuyến mãi</a>
+                    <div class="line"></div>
+                </li>
+                <li class="nav-item"><a href="">Đặt hàng</a></li>
+                <li class="nav-item"><a href="">Sinh nhật</a></li>
+                <li class="nav-item"><a href="../CuaHang/cuahang.html">Cửa hàng</a></li>
+            </ul>
+            <div class="right-content">
+                <div class="block-language-dowload">
+                    <div class="language-flag">
+                        <img src="../images/VietNam_Flag.png" alt="" class="icon_vietnam_dowload">
+                        <select name="" id="language">
+                            <option value="VietNam">Tiếng Việt</option>
+                            <option value="English">Tiếng Anh</option>
+                        </select>
+                    </div>
+                    <!-- <div class="block-dowload">
+                        <img src="../images/lotteria_logo.svg" alt="" class="icon_vietnam_dowload">
+                        <a href="#" class="dowload_app">Dowload App</a>
+                    </div> -->
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="dropdown">
+                            <img src="../images/lotteria_logo.svg" alt="logo-small-lotteria" width="15">
+                            Download
+                            App
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><img src="../images/icon_googleplay.png"
+                                        alt="googleplay-lotteria" width="85"></a>
+                            </li>
+                            <li><a class="dropdown-item" href="#"><img src="../images/icon_appstore.png"
+                                        alt="appstore-lotteria" width="85"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="withoutUser" class="block-info">
+                    <ul class="account-menu">
+                        <li class="menu_item">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_pos_2.svg" alt=""></span>
+                            </a>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_myaccount.svg" alt=""></span>
+                            </a>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_notification.svg" alt=""></span>
+                            </a>
+                        </li>
+                        <li class="menu_item">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_cart.svg" alt=""></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="withUser" class="block-info-logout">
+                    <ul class="account-menu">
+                        <li class="menu_item_login_pos">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_pos_2.svg" alt=""></span>
+                            </a>
+                        </li>
+                        <li class="menu_item_login_myaccount">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_myaccount.svg" alt=""></span>
+                            </a>
+                            <div class="block_infomation none">
+                                <ul class="infomation_list">
+                                    <li>
+
+                                        <a href="#" class="account_infomation">
+                                            <img src="../images/AccountList/icon-account-2.svg" alt=""
+                                                class="infomation_list_icon">
+                                            Thông tin tài khoản
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a href="#" class="shipping_address">
+                                            <img src="../images/AccountList/icon-pos.svg" alt=""
+                                                class="infomation_list_icon">
+                                            Địa chỉ giao hàng
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a href="#" class="order_history">
+                                            <img src="../images/AccountList/icon-history.svg" alt=""
+                                                class="infomation_list_icon">
+                                            Lịch sử đơn hàng
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a href="#" class="my_menu">
+                                            <img src="../images/AccountList/icon-save-2.svg" alt=""
+                                                class="infomation_list_icon">
+                                            Thực đơn của tôi
+                                        </a>
+                                    </li>
+                                    <li>
+
+                                        <a href="#" class="account_help">
+                                            <img src="../images/AccountList/icon-help.svg" alt=""
+                                                class="infomation_list_icon">
+                                            Hỗ trợ
+                                        </a>
+                                    </li>
+                                    <li onclick="logout()">
+
+                                        <a href="#" class="account_logout">
+                                            <img src="../images/AccountList/icon-logout.svg" alt=""
+                                                class="infomation_list_icon">
+                                            Đăng xuất
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="menu_item_login_notification">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_notification.svg" alt="" width="15"></span>
+                            </a>
+                        </li>
+                        <li class="menu_item_login_cart">
+                            <a href="#">
+                                <span class="icon"><img src="../images/icon_cart.svg" alt=""></span>
+                            </a>
+                            <!-- Cart after Login -->
+                            <div class="cart_content none">
+                                <div class="cart_list">
+                                    <ul>
+                                        <!-- <li class="cart_item">
+                                           <button class="btn_delete_cart_item">
+                                            
+                                           </button>
+                                           <div class="field_img_cart">
+                                            <a href="">
+                                              <img src="./image/pack-534x374px_coupleset1 (1).png" alt="">
+                                            </a>
+                                           </div>
+                                           <div class="field_info">
+                                                 <p class="field_name">Combo 119.000 đ</p>
+                                                 <div class="field_price">
+                                                  <span class="current_price">119000</span>
+                                                  <span>đ x</span>
+                                                  <span class="quantity">1</span>
+                                                 </div>
+                                           </div>
+                                           
+                                      </li>
+                                      <li class="cart_item">
+                                        <button class="btn_delete_cart_item">
+                                         
+                                        </button>
+                                        <div class="field_img_cart">
+                                         <a href="">
+                                           <img src="./image/pack-534x374px_coupleset1 (1).png" alt="">
+                                         </a>
+                                        </div>
+                                        <div class="field_info">
+                                              <p class="field_name">Combo 149.000 đ</p>
+                                              <div class="field_price">
+                                               <span class="current_price">149000</span>
+                                               <span>đ x</span>
+                                               <span class="quantity">2</span>
+                                              </div>
+                                        </div>
+                                        
+                                   </li>-->
+                                    </ul>
+                                </div>
+                                <div class="total">
+                                    <p>
+                                        Tổng cộng
+                                    </p>
+                                    <div class="total_number">
+                                        <span id="total-money" class="total_money">0.0đ</span>
+
+                                    </div>
+                                </div>
+                                <button class="pay" onclick="SubmitPayment()">THANH TOÁN</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!--BODY MAIN-->
+    <div class="main">
+        <div class="container">
+            <!--Cate Menu List-->
+            <div>
+                <ul class="cate-menu-list">
+                </ul>
+            </div>
+            <div class="loteria_sort">
+                <p>Sắp xếp theo</p>
+                <select name="" id="" class="sort_drop">
+                    <option value="">Sản phẩm mới</option>
+                    <option value="">Tên sản phẩm</option>
+                </select>
+            </div>
+            <div id="loading"></div>
+            <!--Product-->
+            <div class="discount-item row g-4">
+                <div class="col-lg-3 col-md-3">
+                    <div class="inner">
+                        <div class="field_img">
+                            <a href="#">
+                                <img src="./image/pack-534x374px_coupleset1 (1).png" alt="">
+                            </a>
+                        </div>
+                        <div class="name">
+                            <h5>
+                                Couple Set 1
+                            </h5>
+
+                            <a href="#">
+                                <img src="../images/icon-heart.svg" alt="" class="icon_item">
+                            </a>
+                        </div>
+                        <div class="description">
+                            <p class="desc1">02 Gà rán</p>
+                            <p class="desc2">01 Burger Bulgogi</p>
+                        </div>
+                        <p class="price">
+                            129.000 đ
+                        </p>
+                        <button class="btn-add-to-cart">
+                            Thêm vào giỏ hàng
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--Modal-->
+    <div class="modal_lotteria">
+        <!--Modal_login_back-->
+        <div class="modal_login_back flex">
+            <div class="left_content">
+                <div class="modal_form_login">
+
+                    <h5 class="modal_form_header ">Đăng nhập hoặc tạo tài khoản</h5>
+                    <div class="form_group">
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="email" placeholder="Nhập Email">
+                        <br>
+                        <label for="pwd">Password</label>
+                        <input type="password" id="pwd" name="pwd" placeholder="Nhập mật khẩu">
+                    </div>
+
+                    <button type="submit" onclick="login()" class="btn_buy">
+                        Đăng Nhập
+                    </button>
+                </div>
+                <br>
+                <div>
+                    <button class="btn_next_register">
+                        Tạo Tài Khoản
+                    </button>
+                </div>
+                <br>
+                <div>
+                    <button class="btn_next_not_register">
+                        Mua hàng không cần tài khoản
+                    </button>
+                </div>
+                <div class="login_others">
+                    <p class="text">hoặc Đăng nhập bằng</p>
+                    <ul class="btn_list">
+                        <li class="btn_item">
+                            <button>
+                                <img src="../images/icon-facebook.svg" alt="">
+                                <span>FACEBOOK</span>
+                            </button>
+
+                        </li>
+                        <li class="btn_item">
+                            <button>
+                                <img src="../images/icon_googleplay.png" alt="">
+                                <span>GOOGLE</span>
+                            </button>
+
+                        </li>
+                        <li class="btn_item">
+                            <button>
+                                <img src="../images/icon-instagram.svg" alt="">
+                                <span>APPLE</span>
+                            </button>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right_content">
+                <img src="../images/login-banner.jpg" alt="" class="right_content_img">
+
+            </div>
+            <button class="btn_close_1">
+                <span>x</span>
+            </button>
+        </div>
+        <!--Modal_login-->
+        <div class="modal_login">
+            <div class="left_content">
+                <div class="modal_form_login">
+                    <p class="btn_back_not_register">
+
+                        <a href="#">
+                            <img src="../images/arrow.png" alt="hinh-arrow" width="10">
+                        </a>
+                    </p>
+                    <h5 class="modal_form_header">Mua hàng không cần tài khoản</h5>
+                    <div class="form_group">
+                        <label for="name">Tên người nhận hàng</label>
+                        <input type="text" id="name-not-register" name="name" placeholder="Tên người nhận hàng">
+                    </div>
+                    <div class="form_group">
+                        <label for="sdt">SĐT Giao Hàng</label>
+                        <input type="text" id="sdt-not-register" name="phonenumber" placeholder="Nhập SĐT của bạn">
+                    </div>
+                    <div class="form_group">
+                        <label for="sdt">Email</label>
+                        <input type="text" id="email-not-register" name="email-not-register"
+                            placeholder="Nhập email của bạn">
+                        <button class="code">Gửi mã</button>
+                    </div>
+                    <div class="form_group">
+                        <label for="mxt">Mã xác thực</label>
+                        <input type="text" id="mxt-not-register" name="code" placeholder="Nhập mã xác thực">
+                    </div>
+                    <button type="submit" class="btn_buy" onclick="">Tiến hành mua hàng</button>
+                </div>
+            </div>
+            <div class="right_content">
+                <img src="../images/login-banner.jpg" alt="" class="right_content_img">
+
+            </div>
+            <button class="btn_close_2">
+                <span>x</span>
+            </button>
+        </div>
+        <!-- Modal Register -->
+        <div class="modal_register">
+            <div class="left_content">
+                <div class="modal_form_login">
+                    <p class="btn_back_register">
+                        <a href="#">
+                            <img src="../images/arrow.png" alt="hinh-arrow" width="10">
+                        </a>
+                    </p>
+                    <h5 class="modal_form_header">Đăng Ký</h5>
+                    <div class="form_group">
+                        <label for="name">Tên người đăng ký</label>
+                        <input type="text" id="name-register" name="name" placeholder="Tên người đăng ký">
+                    </div>
+                    <div class="form_group">
+                        <label for="sdt">SĐT Đăng Ký</label>
+                        <input type="text" id="sdt-register" name="sdt" placeholder="Nhập SĐT của bạn">
+                    </div>
+                    <div class="form_group">
+                        <label for="sdt">Email</label>
+                        <input type="text" id="email-register" name="email-register" placeholder="Nhập email của bạn">
+                        <button class="code" onclick="authenticateEmail()">Gửi mã</button>
+                    </div>
+                    <div class="form_group">
+                        <label for="pwd">Mật Khẩu</label>
+                        <input type="password" id="pwd-register" name="pwd-register" placeholder="Nhập mật khẩu">
+                    </div>
+                    <div class="form_group">
+                        <label for="pwd">Nhập Lại Mật Khẩu</label>
+                        <input type="password" id="pwd-register-again" name="pwd-register-again"
+                            placeholder="Nhập lại mật khẩu">
+                    </div>
+                    <div class="form_group">
+                        <label for="mxt">Mã xác thực</label>
+                        <input type="text" id="mxt-register" name="code" placeholder="Nhập mã xác thực">
+                    </div>
+                    <button type="submit" class="btn_register" onclick="register()">Đăng Ký</button>
+                </div>
+            </div>
+            <div class="right_content">
+                <img src="../images/login-banner.jpg" alt="" class="right_content_img">
+
+            </div>
+            <button class="btn_close_3">
+                <span>x</span>
+            </button>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="subcribe-form">
+                <p class="logo-ft">
+                    <img src="../images/lotteria_logo.svg" alt="Lotterria" width="85">
+                </p>
+                <h3>ĐĂNG KÝ NHẬN THÔNG TIN KHUYẾN MÃI</h3>
+                <form class="form-content">
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Nhập email của bạn" class="form-control">
+                        <span class="btn-submit">
+                            <button class="btn" type="submit" title="Gửi Ngay">Gửi ngay →</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+            <div class="right-content">
+                <div class="f-menu">
+                    <div class="item">
+                        <h3>THÔNG TIN</h3>
+                        <ul>
+                            <li>
+                                <a title="Tin Tức" href="#">Tin Tức</a>
+                            </li>
+                            <li>
+                                <a title="Khuyến Mãi" href="#">Khuyến Mãi</a>
+                            </li>
+                            <li>
+                                <a title="Tuyển Dụng" href="#">Tuyển Dụng</a>
+                            </li>
+                            <li>
+                                <a title="Nhượng Quyền" href="#">Nhượng Quyền</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <h3>HỖ TRỢ</h3>
+                        <ul>
+                            <li>
+                                <a title="Điều khoản sử dụng" href="#">Điều khoản sử dụng</a>
+                            </li>
+                            <li>
+                                <a title="Chính sách bảo mật" href="#">Chính sách bảo mật</a>
+                            </li>
+                            <li>
+                                <a title="Chính sách giao hàng" href="#">Chính sách giao hàng</a>
+                            </li>
+                            <li>
+                                <a title="Chăm sóc khách hàng" href="#">Chăm sóc khách hàng</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="item">
+                        <h3>THEO DÕI</h3>
+                        <ul>
+                            <li class="icon icon-fb">
+                                <a title="Facebook" target="_blank"
+                                    href="https://www.facebook.com/ilovelotteria?fref=ts">Facebook</a>
+                            </li>
+                            <li class="icon icon-instagram">
+                                <a title="Instagram" href="https://www.instagram.com/lotteria_vn/"
+                                    target="_blank">Instagram</a>
+                            </li>
+                            <li class="icon icon-zalo">
+                                <a title="Zalo" href="https://zalo.me/532153540884181118" target="_blank">Zalo</a>
+                            </li>
+                        </ul>
+                        <p class="bct-logo">
+                            <a href="http://online.gov.vn/(X(1)S(5zi3rcdhmmdgtemydhaw2z5k))/Home/WebDetails/36393?AspxAutoDetectCookieSupport=1"
+                                target="_blank">
+                                <img src="../images/icon_insurance.png" alt="icon-insurance">
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <strong>© 2022 Lotteria All Rights Reserved</strong>
+            &nbsp;&nbsp;Site by LDCC
+        </div>
+    </footer>
+    <div class="icon-staff-fixed">
+        <a href="https://m.me/ilovelotteria" target="_blank">&nbsp;</a>
+        <object data="./images/icon-staff.svg" type="image/svg+xml"></object>
+    </div>
+
+</body>
+
+</html>
