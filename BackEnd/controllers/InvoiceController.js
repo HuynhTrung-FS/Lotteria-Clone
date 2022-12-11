@@ -1,7 +1,7 @@
 const invoice = require("../models/invoice");
 const customer = require("../models/customer");
 const food = require("../models/food");
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 //get all invoices
 const getAllInvoices = (req, res) => {
@@ -11,8 +11,7 @@ const getAllInvoices = (req, res) => {
     .catch((err) => res.status(400).json(`Error ${err}`));
 };
 
-
-//Add one Food to Invoice And Create An Invoice and Add Invoice To Customer
+//Add one Food to Invoice And Create An Invoice
 const createInvoice = (req, res) => {
   const sumPrice = req.body.SumPrice;
   const sumAmount = req.body.SumAmount;
@@ -32,21 +31,37 @@ const createInvoice = (req, res) => {
   invoiceAdded
     .save()
     .then((data) => {
-      customer.findById(req.body.CustomerId).then((user) => {
-        user.CustomerInvoice.push(data);
-        user
-          .save()
-          .then(() =>
-            res.send({
-              Message: "Invoice was added by Customer",
-              invoiceId: data._id,
-            })
-          )
-          .catch((err) => res.status(400).json(`Errror: ${err}`));
-      });
+      res.send({ data1: data._id });
     })
     .catch((err) => res.status(400).json(`Error: ${err}`));
 };
+//Add invoice true to customer
+const addInvoiceTrueToCustomer = (req, res) => {
+  customer
+    .findById(req.body.CustomerId)
+    .then((user) => {
+      user.CustomerInvoice.push(req.body.InvoiceId);
+      user.save().then(() =>
+        res.send({
+          Message: "Invoice was added by Customer",
+        })
+      );
+    })
+    .catch((err) => res.status(400).json(`Errror: ${err}`));
+};
+//Get invoice by id
+const getInvoiceById = (req, res) => {
+  invoice.findById(req.params.id).then((data) => {
+    res.json(data);
+  });
+};
+//Get Customer By Id
+const getCustomerById = (req, res) => {
+  customer.findById(req.params.id).then((data) => {
+    res.json(data);
+  });
+};
+
 //Add many Foods To Invoice
 const addFoodsToInvoice = (req, res) => {
   // const foodName = req.body.FoodName;
@@ -216,5 +231,8 @@ module.exports = {
   setStatusInvoice,
   updateSumpriceAndSumAmount,
   deleteInvoiceById,
+  addInvoiceTrueToCustomer,
+  getInvoiceById,
+  getCustomerById,
   // getInvoiceStatusFalse,
 };

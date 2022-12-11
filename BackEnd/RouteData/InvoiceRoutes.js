@@ -28,5 +28,13 @@ router.put("/updatesum",invoice.updateSumpriceAndSumAmount);
 //Delete Invoice by id
 router.delete("/deleteinvoicebyid",invoice.deleteInvoiceById);
 
+//add Invoice True To Customer
+router.post("/addinvoicetruetocustomer",invoice.addInvoiceTrueToCustomer);
+
+//get invoice by id
+router.get("/getinvoicebyid/:id",invoice.getInvoiceById);
+
+//get customer by id
+router.get("/getinvoicetrue/:id", invoice.getCustomerById);
 
 module.exports = router;
