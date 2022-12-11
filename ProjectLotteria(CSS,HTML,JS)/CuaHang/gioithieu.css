@@ -1,0 +1,486 @@
+:root {
+    --primary_lotteria_color: #FF5B6A;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary_lotteria_color);
+
+}
+
+#header {
+    background-color: rgba(255, 255, 255, 0.0);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    /* - */
+    z-index: 3;
+}
+
+.right-content .dropdown .dropdown-menu {
+    min-width: 100px;
+}
+
+.btn.btn-primary {
+    font-size: 13px;
+    padding: 5px 5px;
+    background-color: #FF5B6A;
+}
+
+.btn.btn-primary:hover {
+    background-color: #FF5B6A;
+}
+
+.btn.btn-primary:active {
+    background-color: #FF5B6A;
+}
+
+.btn.btn-primary:focus {
+    background-color: #FF5B6A;
+    box-shadow: #FF5B6A;
+}
+
+ul.dropdown-menu.show:hover {
+    background-color: #fff;
+}
+
+
+
+#header .header_background {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
+    position: absolute;
+}
+
+body {
+    background-color: #fff;
+    height: 1000px;
+}
+
+.loteria_nav {
+    display: flex;
+
+}
+
+.top-nav {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex: 1;
+}
+
+.nav-item {
+    list-style: none;
+    padding-left: 12px;
+    padding-right: 12px;
+    position: relative;
+
+}
+
+.nav-item a {
+    display: block;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #556877;
+    font-weight: 650;
+    line-height: 108px;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all ease-in 0.1s;
+}
+
+.logo {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-right: 1.25rem;
+    width: 67px;
+    height: auto;
+
+}
+
+.logo img {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#header {
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
+}
+
+#header ul li a {
+    opacity: 1;
+
+}
+
+.nav-item .line {
+    display: none;
+    width: 80%;
+    height: 2px;
+    background-color: #FF5B6A;
+    position: absolute;
+    bottom: 0;
+
+
+}
+
+#header .nav-item .line {
+    display: block;
+}
+
+#header li :hover {
+    color: #FF5B6A;
+
+}
+
+.icon_vietnam_dowload {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    margin-left: 5px;
+    margin-bottom: 2px;
+}
+
+.language-flag {
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
+
+}
+
+#language {
+    border: none;
+    outline: none;
+    font-size: 11px;
+    font-weight: 500;
+
+}
+
+.block-language-dowload {
+    padding-top: 12px;
+    display: flex;
+    width: 250px;
+    justify-content: space-around;
+
+}
+
+.dowload_app {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 24px;
+    padding-right: 10px;
+
+}
+
+.block-dowload {
+    background-color: #FF5B6A;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
+    margin-right: 8px;
+}
+
+.block-info {
+    display: block;
+}
+
+.block-info-logout {
+    display: none;
+}
+
+.account-menu {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    justify-content: space-around;
+    margin-top: 15px;
+
+}
+
+.account-menu>li .icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
+    position: relative;
+}
+
+.account-menu>li img {
+    position: absolute;
+    top: 25%;
+    left: 28%;
+}
+
+/* Câu chuyện */
+.feature {
+    width: 533px;
+    float: left;
+    margin: 0px 20px 30px 0px;
+    padding-right: 24px;
+}
+
+article img {
+    max-width: 100%;
+}
+
+#introduce h1 {
+    text-align: center;
+}
+
+.nav_bar_store {
+    display: flex;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    justify-content: space-around;
+    margin-bottom: 30px;
+
+}
+
+.nav_bar_store a {
+    display: block;
+    text-decoration: none;
+    color: #142f43;
+    font-size: 18px;
+    font-weight: 600;
+    min-height: 49px;
+    line-height: 49px;
+    border-bottom: 2px solid #fff;
+}
+
+.nav_bar_store a:hover {
+    color: rgb(255, 91, 106);
+    border-bottom: 2px solid #ff5b6a;
+}
+
+.store_lotte_logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.introduce_img {
+    text-align: center;
+}
+
+.location_introduce {
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+p#vietnam_Lotteria {
+    font-weight: bold;
+    color: #ff5b6a;
+    font-size: 36px;
+}
+
+.footer {
+    background-color: #ffeae3;
+    margin-top: 5vw;
+
+}
+
+.footer .container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: block;
+    zoom: 1;
+    height: 35vh;
+}
+
+.subcribe-form {
+    width: 40%;
+    float: left;
+    padding-right: 5vw;
+}
+
+.logo-ft {
+    margin-bottom: 30px;
+}
+
+.logo-ft img {
+    display: block;
+    margin: 0 auto;
+}
+
+.footer .subcribe-form h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.form-content {
+    max-width: 373px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
+    margin-bottom: 0;
+    background-color: #fff;
+    border-radius: 4px;
+    /* -webkit-box-shadow : 0 1px 4px rgb(0 0 0 / 15%); */
+    padding: 8px 6px;
+    position: relative;
+}
+
+.footer .subcribe-form .form-control {
+    background: 0;
+    font-size: 16px;
+    padding-right: 98px;
+    border: 0 solid;
+    border-radius: 5px;
+    height: auto;
+    padding: 7px 10px;
+}
+
+.footer .subcribe-form .form-control:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.footer .subcribe-form .btn-submit {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    height: 100%;
+    padding: 0;
+}
+
+.footer .subcribe-form .btn {
+    background: 0;
+    border: 0 solid #fff;
+    padding: 5px;
+    width: 120px;
+    border-radius: 0;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: #ff5b6a;
+}
+
+.footer .subcribe-form .btn:hover,
+.footer .subcribe-form .btn:focus {
+    outline: 0;
+    box-shadow: none !important;
+    color: #ff5b6a;
+}
+
+.footer .right-content {
+    width: 60%;
+    float: left;
+    padding-left: 15px;
+}
+
+
+
+.footer .copyright {
+    background: #ff9ea2;
+    font-size: 14px;
+    padding: 16px 15px 15px;
+    text-align: center;
+}
+
+.footer .right-content {
+    width: 60%;
+    float: left;
+    padding-left: 15px;
+    padding-top: 12px;
+}
+
+.footer .right-content .f-menu {
+    display: block;
+    zoom: 1;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-bottom: 0;
+}
+
+.footer .right-content .f-menu .item {
+    width: 33.3333%;
+    float: left;
+    padding-right: 15px;
+    margin-bottom: 0;
+    width: 227px;
+}
+
+.footer .right-content h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin: 0 0px 15px;
+    font-weight: 700;
+}
+
+.footer .right-content .f-menu ul {
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.footer .right-content .f-menu li {
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #142f43;
+}
+
+.footer .right-content .f-menu li.icon.icon-fb a {
+    background: url(../images/icon-facebook.svg) 0 1px no-repeat;
+}
+
+.footer .right-content .f-menu li.icon.icon-instagram a {
+    background: url(../images/icon-instagram.svg) 0 1px no-repeat;
+}
+
+.footer .right-content .f-menu li.icon.icon-zalo a {
+    background: url(../images/icon-zalo.svg) 0 1px no-repeat;
+}
+
+.footer .right-content .f-menu li.icon a {
+    display: block;
+    padding-left: 30px;
+    min-height: 22px;
+}
+
+.footer .right-content .f-menu .bct-logo {
+    padding-top: 10px;
+    width: 200px;
+    margin-bottom: 0;
+}
+
+.item ul li a:hover {
+    color: #FF5B6A;
+}
+
+/* set icon-staff css */
+.icon-staff-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+    width: 110px;
+}
+
+.icon-staff-fixed a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    text-decoration: none;
+}

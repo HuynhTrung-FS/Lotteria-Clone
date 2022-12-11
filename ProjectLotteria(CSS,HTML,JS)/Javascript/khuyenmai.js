@@ -89,6 +89,7 @@ async function RenderCategories() {
   let html = "";
   let cateMenuList = document.querySelector(".cate-menu-list");
   categories.forEach((element) => {
+    console.log(element)
     let htmlSegment = `
     <li class="cate-menu-item">
       <p id="category" class="${element.CategoryClass}">
@@ -202,7 +203,7 @@ var current_quantity;
 var total_money_text;
 var total_update;
 
-function Delete_Cart(foodId,invoiceId) {
+function Delete_Cart(foodId, invoiceId) {
   if (parseFloat(total_money.innerText) > 0) {
     let array_btn_delete_cart = document.querySelectorAll(
       ".btn_delete_cart_item"
@@ -218,7 +219,7 @@ function Delete_Cart(foodId,invoiceId) {
           event.target.parentElement.querySelector(".quantity").innerText;
         console.log(current_quantity);
         event.target.parentElement.remove(); /*Delete Item*/
-        DeleteItemCart(foodId,invoiceId);
+        DeleteItemCart(foodId, invoiceId);
         /*Update total*/
 
         total_update =
@@ -257,10 +258,10 @@ function eventButtonAddToCart(foodId, foodName, FoodImage, foodPriceOrg) {
         invoiceCreate
       ).then((data) => {
         // alert(data);
-        localStorage.setItem("invoiceId", data.invoiceId);
+        localStorage.setItem("invoiceId", data.data1);
         console.log(data);
       });
-      RenderCart(foodId,foodName, FoodImage, foodPriceOrg);
+      RenderCart(foodId, foodName, FoodImage, foodPriceOrg);
     } else {
       var idFood2 = {
         FoodElement: foodId,
@@ -272,12 +273,12 @@ function eventButtonAddToCart(foodId, foodName, FoodImage, foodPriceOrg) {
           console.log(data);
         }
       );
-      RenderCart(foodId,foodName, FoodImage, foodPriceOrg);
+      RenderCart(foodId, foodName, FoodImage, foodPriceOrg);
     }
   }
 }
 
-function RenderCart(foodId,foodName, foodImage, foodPriceOrg) {
+function RenderCart(foodId, foodName, foodImage, foodPriceOrg) {
   let flag = false;
   let cart_item_import;
   let cart_item_quantity;
@@ -298,7 +299,7 @@ function RenderCart(foodId,foodName, foodImage, foodPriceOrg) {
       field_name[i].parentElement.querySelector(
         ".quantity"
       ).innerText = `${quantity_temp}`;
-        totalQuantity += 1;
+      totalQuantity += 1;
       break;
     }
   }
@@ -324,7 +325,6 @@ function RenderCart(foodId,foodName, foodImage, foodPriceOrg) {
     node_cart_item.innerHTML = cart_item_import;
     node_cart_item.classList.add("cart_item");
     document.querySelector(".cart_list ul").appendChild(node_cart_item);
-    totalQuantity += 1;
   }
 
   /*Cập nhật lại tiền */
@@ -333,23 +333,32 @@ function RenderCart(foodId,foodName, foodImage, foodPriceOrg) {
   total_update = parseFloat(total_money_text) + parseFloat(price_cart_item);
   total_money_text = total_update;
   total_money.innerText = total_money_text + ".000đ";
-  Delete_Cart(foodId,localStorage.getItem("invoiceId"));
+  Delete_Cart(foodId, localStorage.getItem("invoiceId"));
   console.log(totalQuantity);
 }
 
-
 //event khi nhấn nút thanh toán hoá đơn
-function SubmitPayment(){
-  var total_money1  = document.querySelector(".total_money").innerText;
-  if(total_money1 == "0.0đ"){
+function SubmitPayment() {
+  var total_money1 = document.querySelector(".total_money").innerText;
+  if (total_money1 == "0.0đ" || total_money1 == "0.000đ") {
     alert("không có thức ăn nào trong hoá đơn. Vui lòng chọn sản phẩm!!");
-  }else{
+  } else {
     console.log(total_money1);
     var invoiceid = localStorage.getItem("invoiceId");
+    var userid = localStorage.getItem("userId");
+    const dataStatus = {
+      InvoiceId: invoiceid,
+      CustomerId: userid,
+    };
+    postData(
+      "http://localhost:8000/invoice/addinvoicetruetocustomer/",
+      dataStatus
+    ).then((data) => {
+      console.log(data);
+    });
+    alert("Đơn hàng thanh toán thành công");
     UpdateCartPayed(invoiceid);
-    
     localStorage.removeItem("invoiceId");
-    alert("thanh toán thành công");
     window.location.reload();
   }
 }

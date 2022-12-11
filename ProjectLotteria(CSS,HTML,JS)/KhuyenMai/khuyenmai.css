@@ -215,7 +215,13 @@ body {
     position: relative;
 }
 
-.account-menu>li img {
+/*.account-menu>li>span img {
+    position: absolute;
+    top: 25%;
+    left: 28%;
+}
+*/
+.icon img {
     position: absolute;
     top: 25%;
     left: 28%;
@@ -381,13 +387,14 @@ span.text {
     background-color: #fff;
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 24px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     width: 500px;
     justify-content: space-around;
     flex: 1;
 }
+
 
 .modal_login_back .left_content {
     justify-content: space-around;
@@ -398,7 +405,7 @@ span.text {
 }
 
 .form_group {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     position: relative;
 }
 
@@ -483,8 +490,9 @@ button.code {
 }
 
 .right_content_img {
-    object-fit: contain;
+
     width: 100%;
+    height: 100%;
 }
 
 .btn_close_1,
@@ -530,6 +538,7 @@ button.code {
 .login_others p {
     text-align: center;
     position: relative;
+    padding-top: 30px;
 }
 
 .login_others p::before {
@@ -539,7 +548,7 @@ button.code {
     height: 1px;
     background-color: rgba(179, 179, 179, 0.5);
     position: absolute;
-    top: 50%;
+    top: 77%;
 }
 
 .login_others p::after {
@@ -549,7 +558,7 @@ button.code {
     height: 1px;
     background-color: rgba(179, 179, 179, 0.5);
     position: absolute;
-    top: 50%;
+    top: 77%;
     right: 0;
 }
 
@@ -956,7 +965,7 @@ h5 {
 }
 
 .cart_item .field_img_cart {
-    float: right;
+    float: left;
     width: 60px;
     height: 42px;
     margin-right: 5px;

@@ -64,8 +64,9 @@ function randomCode(){
 function sendEmail(code,emailTo) {
     Email.send({
         Host : "smtp.elasticemail.com",
+        Port :"2525",
         Username : "maihuynhtrung0@gmail.com",
-        Password : "D6039C3AAB8D6915F651FAC7A9D50CF92C86",
+        Password : "6B8343F9FE8D6A51C292DF1F46F365A4C278",
         To : `${emailTo}`,
         From : "maihuynhtrung0@gmail.com",
         Subject : "Mã Xác Thực Để Vào Trang",
